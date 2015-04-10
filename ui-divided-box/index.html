@@ -16,13 +16,13 @@
 
 	<h3>Vertical Container</h3>
 	<pre>
-		<ui-v-divided-box
+		&lt;ui-v-divided-box
 		style="width: 100%; height:300px; border:solid thin red; background-color:#ffc;"
-		divider-width="3" divider-class='myDivClass'>
-		<div style="background-color: ghtgoldenrodyellow;">one</div>
-		<div style="height: 150px; padding:2px; margin:4px; border:thick solid gold;" min="80">two</div>
-		<div>three</div>
-	</ui-v-divided-box>
+		divider-width="3" divider-class='myDivClass'&gt;
+		&lt;div style="background-color: ghtgoldenrodyellow;"&gt;one&lt;/div&gt;
+		&lt;div style="height: 150px; padding:2px; margin:4px; border:thick solid gold;" min="80"&gt;two&lt;/div&gt;
+		&lt;div&gt;three&lt;/div&gt;
+	&lt;/ui-v-divided-box&gt;
 	</pre>
 	<ui-v-divided-box
 		style="width: 100%; height:300px; border:solid thin red; background-color:#ffc;"
@@ -35,13 +35,13 @@
 	<h3>Horizontal Container</h3>
 
 	<pre>
-		<ui-h-divided-box
-			style="width:100%; height:20px; border:solid thin green; background-color:#ddf; margin-bottom:2px;">
-			<div style="background-color: ghtgoldenrodyellow; width: 200px" min="100" max="400">one</div>
-			<div style="background-color: ghtgoldenrodyellow;" min="100" max="600">two</div>
-			<div style="background-color: ghtgoldenrodyellow;" min="100">three</div>
-			<div style="background-color: ghtgoldenrodyellow;" min="100">four</div>
-		</ui-h-divided-box>
+		&tl;ui-h-divided-box
+			style="width:100%; height:20px; border:solid thin green; background-color:#ddf; margin-bottom:2px;"&gt;
+			&tl;div style="background-color: ghtgoldenrodyellow; width: 200px" min="100" max="400"&gt;one&tl;/div&gt;
+			&tl;div style="background-color: ghtgoldenrodyellow;" min="100" max="600"&gt;two&tl;/div&gt;
+			&tl;div style="background-color: ghtgoldenrodyellow;" min="100"&gt;three&tl;/div&gt;
+			&tl;div style="background-color: ghtgoldenrodyellow;" min="100"&gt;four&tl;/div&gt;
+		&tl;/ui-h-divided-box&gt;
 	</pre>
 
 	<ui-h-divided-box
@@ -53,16 +53,16 @@
 	</ui-h-divided-box>
 
 	<pre>
-		<ui-h-divided-box
-			style="width:100%; height:20px; background-color:#ddf; margin-bottom:2px;">
-			<div style="background-color: ghtgoldenrodyellow; width: 200px" min="100" max="400">one</div>
-			<div style="background-color: ghtgoldenrodyellow;" min="100" max="600">two</div>
-			<div style="background-color: ghtgoldenrodyellow; border:solid thin blueviolet" min="100">three</div>
-			<div min="100">FOUR</div>
-			<div id='five' style="background-color: ghtgoldenrodyellow;" min="100">five</div>
-			<div id='six' style="background-color: ghtgoldenrodyellow; border:solid thick greenyellow" min="100">six</div>
-			<div id='seven' style="background-color: ghtgoldenrodyellow;" min="100">seven</div>
-		</ui-h-divided-box>
+		&lt;ui-h-divided-box
+			style="width:100%; height:20px; background-color:#ddf; margin-bottom:2px;"&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow; width: 200px" min="100" max="400"&gt;one&lt;/div&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow;" min="100" max="600"&gt;two&lt;/div&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow; border:solid thin blueviolet" min="100"&gt;three&lt;/div&gt;
+			&lt;div min="100"&gt;FOUR&lt;/div&gt;
+			&lt;div id='five' style="background-color: ghtgoldenrodyellow;" min="100"&gt;five&lt;/div&gt;
+			&lt;div id='six' style="background-color: ghtgoldenrodyellow; border:solid thick greenyellow" min="100"&gt;six&lt;/div&gt;
+			&lt;div id='seven' style="background-color: ghtgoldenrodyellow;" min="100"&gt;seven&lt;/div&gt;
+		&lt;/ui-h-divided-box&gt;
 	</pre>
 	<ui-h-divided-box
 		style="width:100%; height:20px; background-color:#ddf; margin-bottom:2px;">
@@ -77,6 +77,32 @@
 
 
 	<h3>Compound Container</h3>
+	<pre>
+	&lt;ui-h-divided-box
+		style="width:100%; height:500px; border:solid thin blue; background-color:#cfc"
+		id='outer'&gt; 
+		&lt;ui-v-divided-box
+			style="width:300px; height:500px; background-color:#ffc"
+			min="300" max="900" id='innerLeft'&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow;" min="80"&gt;one&lt;/div&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow; padding:10px;" min="80"&gt;two&lt;/div&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow;" min="80"&gt;three&lt;/div&gt;
+			&lt;div min="20"&gt;FOUR&lt;/div&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow;" min="80"&gt;three&lt;/div&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow;" min="80"&gt;three&lt;/div&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow;" min="80"&gt;three&lt;/div&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow;" min="80"&gt;three&lt;/div&gt;
+		&lt;/ui-v-divided-box&gt; 
+		&lt;ui-v-divided-box
+			style="height:500px; background-color:#ffc"
+			min="200" id="innerRight"&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow;" min="100" max="400"&gt;one&lt;/div&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow;" min="100" max="600"&gt;two&lt;/div&gt;
+			&lt;div style="background-color: ghtgoldenrodyellow;" min="100"&gt;three&lt;/div&gt;
+			&lt;div min="100"&gt;FOUR&lt;/div&gt;
+		&lt;/ui-v-divided-box&gt;
+	&lt;/ui-h-divided-box&gt;
+	</pre>
 	<ui-h-divided-box
 		style="width:100%; height:500px; border:solid thin blue; background-color:#cfc"
 		id='outer'> 
