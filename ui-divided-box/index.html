@@ -8,123 +8,143 @@
 .myDivClass {
 	background-color: rgba(66, 142, 66, .8);
 }
+.divBox {
+	width:90%;
+	margin: 0 auto;
+	border:solid thin red;
+	background-color:#aca;
+}
+.childElement {
+	background-color: lightyellow;
+	padding: 2px;
+}
 </style>
 </head>
-<bodypadding:20px; position:relative; top:0; bottom:0; left:0; right:0;">
+<body style="padding:20px; position:relative; top:0; bottom:0; left:0; right:0;">
 
-<h3>Demo for ui-divided-box</h3>
+<h2>Demo for directive ui-divided-box written in AngularJS</h2>
+
+<p>Drag the dividers to change the size of the child elements.
+
+<h3>CSS being used in these examples.</h3>
+<pre>
+	&lt;style type="text/css">
+	.myDivClass {
+		background-color: rgba(66, 142, 66, .8);
+	}
+	.divBox {
+		width:90%;
+		margin: 0 auto;
+		border:solid thin red;
+		background-color:#aca;
+	}
+	.childElement {
+		background-color: lightyellow;
+		padding: 2px;
+	}
+	&lt;/style>
+</pre>
+
+<br><br><br><br>
 
 	<h3>Vertical Container</h3>
-	<pre>
-		&lt;ui-v-divided-box
-		style="width: 100%; height:300px; border:solid thin red; background-color:#ffc;"
-		divider-width="3" divider-class='myDivClass'&gt;
-		&lt;div style="background-color: ghtgoldenrodyellow;"&gt;one&lt;/div&gt;
-		&lt;div style="height: 150px; padding:2px; margin:4px; border:thick solid gold;" min="80"&gt;two&lt;/div&gt;
-		&lt;div&gt;three&lt;/div&gt;
-	&lt;/ui-v-divided-box&gt;
-	</pre>
-	<ui-v-divided-box
-		style="width: 100%; height:300px; border:solid thin red; background-color:#ffc;"
+<pre>
+	&lt;ui-v-divided-box class="divBox"
+		style="width: 90%; height:300px; border:solid thin red; background-color:#ffc; margin: 0 auto;"
 		divider-width="3" divider-class='myDivClass'>
-		<div style="background-color: ghtgoldenrodyellow;">one</div>
-		<div style="height: 200px; padding:2px; margin:4px; border:thick solid gold;" min="80">two</div>
+		&lt;div class="childElement">one</div>
+		&lt;div class="childElement" style="height: 200px; padding:2px; margin:4px; border:thick solid gold;" min="80">two</div>
+		&lt;div>three</div>
+	&lt;/ui-v-divided-box>
+</pre>
+	<ui-v-divided-box class="divBox"
+		style="width: 90%; height:300px; border:solid thin red; background-color:#ffc; margin: 0 auto;"
+		divider-width="3" divider-class='myDivClass'>
+		<div class="childElement">one</div>
+		<div class="childElement" style="height: 200px; padding:2px; margin:4px; border:thick solid gold;" min="80">two</div>
 		<div>three</div>
 	</ui-v-divided-box>
+<br><br><br><br>
 
 	<h3>Horizontal Container</h3>
 
-	<pre>
-		&tl;ui-h-divided-box
-			style="width:100%; height:20px; border:solid thin green; background-color:#ddf; margin-bottom:2px;"&gt;
-			&tl;div style="background-color: ghtgoldenrodyellow; width: 200px" min="100" max="400"&gt;one&tl;/div&gt;
-			&tl;div style="background-color: ghtgoldenrodyellow;" min="100" max="600"&gt;two&tl;/div&gt;
-			&tl;div style="background-color: ghtgoldenrodyellow;" min="100"&gt;three&tl;/div&gt;
-			&tl;div style="background-color: ghtgoldenrodyellow;" min="100"&gt;four&tl;/div&gt;
-		&tl;/ui-h-divided-box&gt;
-	</pre>
+<pre>
+	&lt;ui-h-divided-box class="divBox" style="height:20px;">
+		&lt;div class="childElement" style="width: 200px" min="100" max="400">one&lt;/div>
+		&lt;div class="childElement" min="100" max="600">two&lt;/div>
+		&lt;div class="childElement" min="100">three&lt;/div>
+		&lt;div class="childElement" min="100">four&lt;/div>
+	&lt;/ui-h-divided-box>
+</pre>
 
-	<ui-h-divided-box
-		style="width:100%; height:20px; border:solid thin green; background-color:#ddf; margin-bottom:2px;">
-		<div style="background-color: ghtgoldenrodyellow; width: 200px" min="100" max="400">one</div>
-		<div style="background-color: ghtgoldenrodyellow;" min="100" max="600">two</div>
-		<div style="background-color: ghtgoldenrodyellow;" min="100">three</div>
-		<div style="background-color: ghtgoldenrodyellow;" min="100">four</div>
+	<ui-h-divided-box class="divBox" style="height:20px;">
+		<div class="childElement" style="width: 200px" min="100" max="400">one</div>
+		<div class="childElement" min="100" max="600">two</div>
+		<div class="childElement" min="100">three</div>
+		<div class="childElement" min="100">four</div>
 	</ui-h-divided-box>
 
+<br><br>
+
 	<pre>
-		&lt;ui-h-divided-box
-			style="width:100%; height:20px; background-color:#ddf; margin-bottom:2px;"&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow; width: 200px" min="100" max="400"&gt;one&lt;/div&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow;" min="100" max="600"&gt;two&lt;/div&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow; border:solid thin blueviolet" min="100"&gt;three&lt;/div&gt;
-			&lt;div min="100"&gt;FOUR&lt;/div&gt;
-			&lt;div id='five' style="background-color: ghtgoldenrodyellow;" min="100"&gt;five&lt;/div&gt;
-			&lt;div id='six' style="background-color: ghtgoldenrodyellow; border:solid thick greenyellow" min="100"&gt;six&lt;/div&gt;
-			&lt;div id='seven' style="background-color: ghtgoldenrodyellow;" min="100"&gt;seven&lt;/div&gt;
-		&lt;/ui-h-divided-box&gt;
+	&lt;ui-h-divided-box class="divBox" style="height:20px;">
+		&lt;div class="childElement" style="width: 200px" min="100" max="400">one&lt;/div>
+		&lt;div class="childElement" min="100" max="600">two&lt;/div>
+		&lt;div class="childElement" style="border:solid thin blueviolet" min="100">three&lt;/div>
+		&lt;div class="childElement" min="100">FOUR&lt;/div>
+		&lt;div class="childElement" min="100">five&lt;/div>
+		&lt;div class="childElement" style="border:solid thick greenyellow" min="100">six&lt;/div>
+		&lt;div class="childElement" min="100">seven&lt;/div>
+	&lt;/ui-h-divided-box>
 	</pre>
-	<ui-h-divided-box
-		style="width:100%; height:20px; background-color:#ddf; margin-bottom:2px;">
-		<div style="background-color: ghtgoldenrodyellow; width: 200px" min="100" max="400">one</div>
-		<div style="background-color: ghtgoldenrodyellow;" min="100" max="600">two</div>
-		<div style="background-color: ghtgoldenrodyellow; border:solid thin blueviolet" min="100">three</div>
-		<div min="100">FOUR</div>
-		<div id='five' style="background-color: ghtgoldenrodyellow;" min="100">five</div>
-		<div id='six' style="background-color: ghtgoldenrodyellow; border:solid thick greenyellow" min="100">six</div>
-		<div id='seven' style="background-color: ghtgoldenrodyellow;" min="100">seven</div>
+
+	<ui-h-divided-box class="divBox" style="height:20px;">
+		<div class="childElement" style="width: 200px" min="100" max="400">one</div>
+		<div class="childElement" min="100" max="600">two</div>
+		<div class="childElement" style="border:solid thin blueviolet" min="100">three</div>
+		<div class="childElement" min="100">FOUR</div>
+		<div class="childElement" min="100">five</div>
+		<div class="childElement" style="border:solid thick greenyellow" min="100">six</div>
+		<div class="childElement" min="100">seven</div>
 	</ui-h-divided-box>
-
-
+<br><br><br><br>
 	<h3>Compound Container</h3>
 	<pre>
-	&lt;ui-h-divided-box
-		style="width:100%; height:500px; border:solid thin blue; background-color:#cfc"
-		id='outer'&gt; 
-		&lt;ui-v-divided-box
-			style="width:300px; height:500px; background-color:#ffc"
-			min="300" max="900" id='innerLeft'&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow;" min="80"&gt;one&lt;/div&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow; padding:10px;" min="80"&gt;two&lt;/div&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow;" min="80"&gt;three&lt;/div&gt;
-			&lt;div min="20"&gt;FOUR&lt;/div&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow;" min="80"&gt;three&lt;/div&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow;" min="80"&gt;three&lt;/div&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow;" min="80"&gt;three&lt;/div&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow;" min="80"&gt;three&lt;/div&gt;
-		&lt;/ui-v-divided-box&gt; 
-		&lt;ui-v-divided-box
-			style="height:500px; background-color:#ffc"
-			min="200" id="innerRight"&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow;" min="100" max="400"&gt;one&lt;/div&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow;" min="100" max="600"&gt;two&lt;/div&gt;
-			&lt;div style="background-color: ghtgoldenrodyellow;" min="100"&gt;three&lt;/div&gt;
-			&lt;div min="100"&gt;FOUR&lt;/div&gt;
-		&lt;/ui-v-divided-box&gt;
-	&lt;/ui-h-divided-box&gt;
+	&lt;ui-h-divided-box class="divBox" style="height:801px;"> 
+		&lt;ui-v-divided-box class="divBox" style="width:300px; height:100%; border:solid thick red;" min="300" max="900">
+			&lt;div class="childElement" min="40">one&lt;/div>
+			&lt;div class="childElement" min="40">two&lt;/div>
+			&lt;div class="childElement" min="40">three&lt;/div>
+			&lt;div class="childElement" min="20">four&lt;/div>
+			&lt;div class="childElement" style="border:solid thick green" min="80">five&lt;/div>
+			&lt;div class="childElement" min="80">six&lt;/div>
+			&lt;div class="childElement" min="80">eight&lt;/div>
+			&lt;div class="childElement" min="20">nine&lt;/div>
+		&lt;/ui-v-divided-box> 
+		&lt;ui-v-divided-box class="divBox" style="height:100%;" min="200" id="innerRight">
+			&lt;div class="childElement" min="100" max="400">one&lt;/div>
+			&lt;div class="childElement" min="100" max="600">two&lt;/div>
+			&lt;div class="childElement" min="100">three&lt;/div>
+			&lt;div class="childElement" min="100">FOUR&lt;/div>
+		&lt;/ui-v-divided-box>
+	&lt;/ui-h-divided-box>
 	</pre>
-	<ui-h-divided-box
-		style="width:100%; height:500px; border:solid thin blue; background-color:#cfc"
-		id='outer'> 
-		<ui-v-divided-box
-			style="width:300px; height:500px; background-color:#ffc"
-			min="300" max="900" id='innerLeft'>
-			<div style="background-color: ghtgoldenrodyellow;" min="80">one</div>
-			<div style="background-color: ghtgoldenrodyellow; padding:10px;" min="80">two</div>
-			<div style="background-color: ghtgoldenrodyellow;" min="80">three</div>
-			<div min="20">FOUR</div>
-			<div style="background-color: ghtgoldenrodyellow;" min="80">three</div>
-			<div style="background-color: ghtgoldenrodyellow;" min="80">three</div>
-			<div style="background-color: ghtgoldenrodyellow;" min="80">three</div>
-			<div style="background-color: ghtgoldenrodyellow;" min="80">three</div>
+	<ui-h-divided-box class="divBox" style="height:801px;"> 
+		<ui-v-divided-box class="divBox" style="width:300px; height:100%; border:solid thick red;" min="300" max="900">
+			<div class="childElement" min="40">one</div>
+			<div class="childElement" min="40">two</div>
+			<div class="childElement" min="40">three</div>
+			<div class="childElement" min="20">four</div>
+			<div class="childElement" style="border:solid thick green" min="80">five</div>
+			<div class="childElement" min="80">six</div>
+			<div class="childElement" min="80">eight</div>
+			<div class="childElement" min="20">nine</div>
 		</ui-v-divided-box> 
-		<ui-v-divided-box
-			style="height:500px; background-color:#ffc"
-			min="200" id="innerRight">
-			<div style="background-color: ghtgoldenrodyellow;" min="100" max="400">one</div>
-			<div style="background-color: ghtgoldenrodyellow;" min="100" max="600">two</div>
-			<div style="background-color: ghtgoldenrodyellow;" min="100">three</div>
-			<div min="100">FOUR</div>
+		<ui-v-divided-box class="divBox" style="height:100%;" min="200" id="innerRight">
+			<div class="childElement" min="100" max="400">one</div>
+			<div class="childElement" min="100" max="600">two</div>
+			<div class="childElement" min="100">three</div>
+			<div class="childElement" min="100">FOUR</div>
 		</ui-v-divided-box>
 	</ui-h-divided-box>
 
